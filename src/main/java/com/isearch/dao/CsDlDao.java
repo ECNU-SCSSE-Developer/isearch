@@ -17,6 +17,6 @@ public interface CsDlDao {
 
     int updateByPrimaryKey(CsDl record);
     
-    //·µ»Øcs_dl±íÖÐËùÓÐÔª×é
+    //è¿”å›žcs_dlä¸­æ‰€æœ‰å…ƒç»„
     List<CsDl> listAll();
 }

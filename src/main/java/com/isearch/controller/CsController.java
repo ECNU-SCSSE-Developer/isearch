@@ -22,9 +22,9 @@ public class CsController {
 	private ModelAndView getList(){
 		ModelAndView mav = new ModelAndView();
 		List<CsDl> list = csDlService.getList();
-		// 放入转发参数
+		//鏀惧叆杞彂鍙傛暟
         mav.addObject("list", list);
-        // 放入jsp路径
+        //鏀惧叆jsp璺緞
         mav.setViewName("cs_dl");
 		return mav;
 	}
