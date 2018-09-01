@@ -1,5 +1,7 @@
 package com.isearch.dao;
 
+import java.util.List;
+
 import com.isearch.entity.CsDl;
 
 public interface CsDlDao {
@@ -14,4 +16,7 @@ public interface CsDlDao {
     int updateByPrimaryKeySelective(CsDl record);
 
     int updateByPrimaryKey(CsDl record);
+    
+    //返回cs_dl表中所有元组
+    List<CsDl> listAll();
 }

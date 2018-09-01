@@ -1,141 +1,156 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.isearch.dao.CsDlDao" >
-  <resultMap id="BaseResultMap" type="com.isearch.entity.CsDl" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="link" property="link" jdbcType="VARCHAR" />
-    <result column="img" property="img" jdbcType="VARCHAR" />
-    <result column="version" property="version" jdbcType="VARCHAR" />
-    <result column="name" property="name" jdbcType="VARCHAR" />
-    <result column="dl_last_update_time" property="dlLastUpdateTime" jdbcType="DATE" />
-    <result column="download_time" property="downloadTime" jdbcType="INTEGER" />
-    <result column="score" property="score" jdbcType="INTEGER" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
-  </resultMap>
-  <sql id="Base_Column_List" >
-    id, link, img, version, name, dl_last_update_time, download_time, score, remark
-  </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from cs_dl
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
-    delete from cs_dl
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.isearch.entity.CsDl" >
-    insert into cs_dl (id, link, img, 
-      version, name, dl_last_update_time, 
-      download_time, score, remark
-      )
-    values (#{id,jdbcType=INTEGER}, #{link,jdbcType=VARCHAR}, #{img,jdbcType=VARCHAR}, 
-      #{version,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{dlLastUpdateTime,jdbcType=DATE}, 
-      #{downloadTime,jdbcType=INTEGER}, #{score,jdbcType=INTEGER}, #{remark,jdbcType=VARCHAR}
-      )
-  </insert>
-  <insert id="insertSelective" parameterType="com.isearch.entity.CsDl" >
-    insert into cs_dl
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
-      <if test="link != null" >
-        link,
-      </if>
-      <if test="img != null" >
-        img,
-      </if>
-      <if test="version != null" >
-        version,
-      </if>
-      <if test="name != null" >
-        name,
-      </if>
-      <if test="dlLastUpdateTime != null" >
-        dl_last_update_time,
-      </if>
-      <if test="downloadTime != null" >
-        download_time,
-      </if>
-      <if test="score != null" >
-        score,
-      </if>
-      <if test="remark != null" >
-        remark,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="link != null" >
-        #{link,jdbcType=VARCHAR},
-      </if>
-      <if test="img != null" >
-        #{img,jdbcType=VARCHAR},
-      </if>
-      <if test="version != null" >
-        #{version,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null" >
-        #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="dlLastUpdateTime != null" >
-        #{dlLastUpdateTime,jdbcType=DATE},
-      </if>
-      <if test="downloadTime != null" >
-        #{downloadTime,jdbcType=INTEGER},
-      </if>
-      <if test="score != null" >
-        #{score,jdbcType=INTEGER},
-      </if>
-      <if test="remark != null" >
-        #{remark,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.isearch.entity.CsDl" >
-    update cs_dl
-    <set >
-      <if test="link != null" >
-        link = #{link,jdbcType=VARCHAR},
-      </if>
-      <if test="img != null" >
-        img = #{img,jdbcType=VARCHAR},
-      </if>
-      <if test="version != null" >
-        version = #{version,jdbcType=VARCHAR},
-      </if>
-      <if test="name != null" >
-        name = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="dlLastUpdateTime != null" >
-        dl_last_update_time = #{dlLastUpdateTime,jdbcType=DATE},
-      </if>
-      <if test="downloadTime != null" >
-        download_time = #{downloadTime,jdbcType=INTEGER},
-      </if>
-      <if test="score != null" >
-        score = #{score,jdbcType=INTEGER},
-      </if>
-      <if test="remark != null" >
-        remark = #{remark,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.isearch.entity.CsDl" >
-    update cs_dl
-    set link = #{link,jdbcType=VARCHAR},
-      img = #{img,jdbcType=VARCHAR},
-      version = #{version,jdbcType=VARCHAR},
-      name = #{name,jdbcType=VARCHAR},
-      dl_last_update_time = #{dlLastUpdateTime,jdbcType=DATE},
-      download_time = #{downloadTime,jdbcType=INTEGER},
-      score = #{score,jdbcType=INTEGER},
-      remark = #{remark,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+<mapper namespace="com.isearch.dao.CsDlDao">
+	<resultMap id="BaseResultMap" type="com.isearch.entity.CsDl">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="link" property="link" jdbcType="VARCHAR" />
+		<result column="img" property="img" jdbcType="VARCHAR" />
+		<result column="version" property="version" jdbcType="VARCHAR" />
+		<result column="name" property="name" jdbcType="VARCHAR" />
+		<result column="dl_last_update_time"
+			property="dlLastUpdateTime" jdbcType="DATE" />
+		<result column="download_time" property="downloadTime"
+			jdbcType="INTEGER" />
+		<result column="score" property="score" jdbcType="INTEGER" />
+		<result column="remark" property="remark" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, link, img, version, name, dl_last_update_time, download_time, score,
+		remark
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
+		parameterType="java.lang.Integer">
+		select
+		<include refid="Base_Column_List" />
+		from cs_dl
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey"
+		parameterType="java.lang.Integer">
+		delete from cs_dl
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.isearch.entity.CsDl">
+		insert into cs_dl (id, link, img,
+		version, name, dl_last_update_time,
+		download_time, score, remark
+		)
+		values (#{id,jdbcType=INTEGER}, #{link,jdbcType=VARCHAR},
+		#{img,jdbcType=VARCHAR},
+		#{version,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{dlLastUpdateTime,jdbcType=DATE},
+		#{downloadTime,jdbcType=INTEGER}, #{score,jdbcType=INTEGER},
+		#{remark,jdbcType=VARCHAR}
+		)
+	</insert>
+	<insert id="insertSelective"
+		parameterType="com.isearch.entity.CsDl">
+		insert into cs_dl
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="link != null">
+				link,
+			</if>
+			<if test="img != null">
+				img,
+			</if>
+			<if test="version != null">
+				version,
+			</if>
+			<if test="name != null">
+				name,
+			</if>
+			<if test="dlLastUpdateTime != null">
+				dl_last_update_time,
+			</if>
+			<if test="downloadTime != null">
+				download_time,
+			</if>
+			<if test="score != null">
+				score,
+			</if>
+			<if test="remark != null">
+				remark,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="link != null">
+				#{link,jdbcType=VARCHAR},
+			</if>
+			<if test="img != null">
+				#{img,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				#{version,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="dlLastUpdateTime != null">
+				#{dlLastUpdateTime,jdbcType=DATE},
+			</if>
+			<if test="downloadTime != null">
+				#{downloadTime,jdbcType=INTEGER},
+			</if>
+			<if test="score != null">
+				#{score,jdbcType=INTEGER},
+			</if>
+			<if test="remark != null">
+				#{remark,jdbcType=VARCHAR},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective"
+		parameterType="com.isearch.entity.CsDl">
+		update cs_dl
+		<set>
+			<if test="link != null">
+				link = #{link,jdbcType=VARCHAR},
+			</if>
+			<if test="img != null">
+				img = #{img,jdbcType=VARCHAR},
+			</if>
+			<if test="version != null">
+				version = #{version,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				name = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="dlLastUpdateTime != null">
+				dl_last_update_time = #{dlLastUpdateTime,jdbcType=DATE},
+			</if>
+			<if test="downloadTime != null">
+				download_time = #{downloadTime,jdbcType=INTEGER},
+			</if>
+			<if test="score != null">
+				score = #{score,jdbcType=INTEGER},
+			</if>
+			<if test="remark != null">
+				remark = #{remark,jdbcType=VARCHAR},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey"
+		parameterType="com.isearch.entity.CsDl">
+		update cs_dl
+		set link = #{link,jdbcType=VARCHAR},
+		img = #{img,jdbcType=VARCHAR},
+		version = #{version,jdbcType=VARCHAR},
+		name = #{name,jdbcType=VARCHAR},
+		dl_last_update_time = #{dlLastUpdateTime,jdbcType=DATE},
+		download_time = #{downloadTime,jdbcType=INTEGER},
+		score = #{score,jdbcType=INTEGER},
+		remark = #{remark,jdbcType=VARCHAR}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<select id="listAll" resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List" />
+		from cs_dl
+	</select>
 </mapper>
