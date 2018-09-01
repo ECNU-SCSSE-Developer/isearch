@@ -5,7 +5,7 @@
 	version="3.1" metadata-complete="true">
 	<!-- 如果是用mvn命令生成的xml，需要修改servlet版本为3.1 -->
 
-
+	
 	<!-- 中文字符处理 -->
 	<filter>
 		<filter-name>CharacterEncodingFilter</filter-name>
@@ -30,6 +30,7 @@
 		<filter-name>HiddenHttpMethodFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+
 	<!-- 配置DispatcherServlet -->
 	<servlet>
 		<servlet-name>SpringMVC</servlet-name>

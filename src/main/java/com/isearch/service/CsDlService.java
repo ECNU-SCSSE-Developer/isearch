@@ -5,5 +5,5 @@ import java.util.List;
 import com.isearch.entity.CsDl;
 
 public interface CsDlService {
-	public List<CsDl> getList();//·µ»Øcs_dl±íÖÐËùÓÐÔª×é
+	public List<CsDl> getList();//è¿”å›žcs_dlä¸­æ‰€æœ‰å…ƒç»„
 }
