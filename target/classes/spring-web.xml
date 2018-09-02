@@ -35,4 +35,7 @@
 	<!-- 4.扫描web相关的bean -->
 	<context:component-scan
 		base-package="com.isearch.controller" />
+		
+	<!-- 开放对上传功能的支持 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
 </beans>

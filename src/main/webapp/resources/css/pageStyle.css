@@ -1,5 +1,26 @@
 body
 {
-	 color:sienna;
-	 margin-left:200px;
+	background-image:url("../images/bg.jpg");
+}
+
+.items
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	border: 1px solid #a1a1a1;
+	border-radius: 20px;
+	margin: 0 auto;
+	box-shadow: 10px 10px 5px #888888;
+	width: 60%;
+}
+
+.c1
+{
+
+}
+
+.c2
+{
+
 }

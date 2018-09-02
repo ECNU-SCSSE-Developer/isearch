@@ -3,7 +3,7 @@
 <mapper namespace="com.isearch.dao.CsDlDao">
 	<resultMap id="BaseResultMap" type="com.isearch.entity.CsDl">
 		<id column="id" property="id" jdbcType="INTEGER" />
-		<result column="link" property="link" jdbcType="VARCHAR" />
+		<result column="link1" property="link1" jdbcType="VARCHAR" />
 		<result column="img" property="img" jdbcType="VARCHAR" />
 		<result column="version" property="version" jdbcType="VARCHAR" />
 		<result column="name" property="name" jdbcType="VARCHAR" />
@@ -13,10 +13,14 @@
 			jdbcType="INTEGER" />
 		<result column="score" property="score" jdbcType="INTEGER" />
 		<result column="remark" property="remark" jdbcType="VARCHAR" />
+		<result column="link2" property="link2" jdbcType="VARCHAR" />
+		<result column="link3" property="link3" jdbcType="VARCHAR" />
+		<result column="intro" property="intro" jdbcType="VARCHAR" />
 	</resultMap>
 	<sql id="Base_Column_List">
-		id, link, img, version, name, dl_last_update_time, download_time, score,
-		remark
+		id, link1, img, version, name, dl_last_update_time, download_time, score,
+		remark,
+		link2, link3, intro
 	</sql>
 	<select id="selectByPrimaryKey" resultMap="BaseResultMap"
 		parameterType="java.lang.Integer">
@@ -31,15 +35,17 @@
 		where id = #{id,jdbcType=INTEGER}
 	</delete>
 	<insert id="insert" parameterType="com.isearch.entity.CsDl">
-		insert into cs_dl (id, link, img,
+		insert into cs_dl (id, link1, img,
 		version, name, dl_last_update_time,
-		download_time, score, remark
+		download_time, score, remark,
+		link2, link3, intro
 		)
-		values (#{id,jdbcType=INTEGER}, #{link,jdbcType=VARCHAR},
+		values (#{id,jdbcType=INTEGER}, #{link1,jdbcType=VARCHAR},
 		#{img,jdbcType=VARCHAR},
 		#{version,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{dlLastUpdateTime,jdbcType=DATE},
 		#{downloadTime,jdbcType=INTEGER}, #{score,jdbcType=INTEGER},
-		#{remark,jdbcType=VARCHAR}
+		#{remark,jdbcType=VARCHAR},
+		#{link2,jdbcType=VARCHAR}, #{link3,jdbcType=VARCHAR}, #{intro,jdbcType=VARCHAR}
 		)
 	</insert>
 	<insert id="insertSelective"
@@ -49,8 +55,8 @@
 			<if test="id != null">
 				id,
 			</if>
-			<if test="link != null">
-				link,
+			<if test="link1 != null">
+				link1,
 			</if>
 			<if test="img != null">
 				img,
@@ -73,13 +79,22 @@
 			<if test="remark != null">
 				remark,
 			</if>
+			<if test="link2 != null">
+				link2,
+			</if>
+			<if test="link3 != null">
+				link3,
+			</if>
+			<if test="intro != null">
+				intro,
+			</if>
 		</trim>
 		<trim prefix="values (" suffix=")" suffixOverrides=",">
 			<if test="id != null">
 				#{id,jdbcType=INTEGER},
 			</if>
-			<if test="link != null">
-				#{link,jdbcType=VARCHAR},
+			<if test="link1 != null">
+				#{link1,jdbcType=VARCHAR},
 			</if>
 			<if test="img != null">
 				#{img,jdbcType=VARCHAR},
@@ -102,14 +117,23 @@
 			<if test="remark != null">
 				#{remark,jdbcType=VARCHAR},
 			</if>
+			<if test="link2 != null">
+				#{link2,jdbcType=VARCHAR},
+			</if>
+			<if test="link3 != null">
+				#{link3,jdbcType=VARCHAR},
+			</if>
+			<if test="intro != null">
+				#{intro,jdbcType=VARCHAR},
+			</if>
 		</trim>
 	</insert>
 	<update id="updateByPrimaryKeySelective"
 		parameterType="com.isearch.entity.CsDl">
 		update cs_dl
 		<set>
-			<if test="link != null">
-				link = #{link,jdbcType=VARCHAR},
+			<if test="link1 != null">
+				link1 = #{link1,jdbcType=VARCHAR},
 			</if>
 			<if test="img != null">
 				img = #{img,jdbcType=VARCHAR},
@@ -132,20 +156,32 @@
 			<if test="remark != null">
 				remark = #{remark,jdbcType=VARCHAR},
 			</if>
+			<if test="link2 != null">
+				link2 = #{link2,jdbcType=VARCHAR},
+			</if>
+			<if test="link3 != null">
+				link3 = #{link3,jdbcType=VARCHAR},
+			</if>
+			<if test="intro != null">
+				intro = #{intro,jdbcType=VARCHAR},
+			</if>
 		</set>
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 	<update id="updateByPrimaryKey"
 		parameterType="com.isearch.entity.CsDl">
 		update cs_dl
-		set link = #{link,jdbcType=VARCHAR},
+		set link1 = #{link1,jdbcType=VARCHAR},
 		img = #{img,jdbcType=VARCHAR},
 		version = #{version,jdbcType=VARCHAR},
 		name = #{name,jdbcType=VARCHAR},
 		dl_last_update_time = #{dlLastUpdateTime,jdbcType=DATE},
 		download_time = #{downloadTime,jdbcType=INTEGER},
 		score = #{score,jdbcType=INTEGER},
-		remark = #{remark,jdbcType=VARCHAR}
+		remark = #{remark,jdbcType=VARCHAR},
+		link2 = #{link2,jdbcType=VARCHAR},
+		link3 = #{link3,jdbcType=VARCHAR},
+		intro = #{intro,jdbcType=VARCHAR}
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 	<select id="listAll" resultMap="BaseResultMap">
