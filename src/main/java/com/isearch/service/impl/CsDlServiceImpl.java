@@ -20,4 +20,8 @@ public class CsDlServiceImpl implements CsDlService {
 		return csDls;
 	}
 
+	public int insert(CsDl record) {
+		csDlDao.insert(record);
+		return 1;
+	}
 }
