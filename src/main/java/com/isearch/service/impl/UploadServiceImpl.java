@@ -22,6 +22,8 @@ public class UploadServiceImpl implements UploadService {
 
 	private static Logger logger = Logger.getLogger(UploadServiceImpl.class);
 	
+	
+	/*上传图片资源至ftp服务器*/
 	public boolean uploadFile(UploadedImageFile file) {
 		//读取properties文件内内容
 		Properties prop = new Properties();

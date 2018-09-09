@@ -15,8 +15,10 @@ public class CsDlServiceImpl implements CsDlService {
 	@Autowired
 	CsDlDao csDlDao;
 	
+	
+	/*得到cs_dl表中所以元组*/
 	public List<CsDl> getList() {
-		List<CsDl> csDls = csDlDao.listAll();
+		List<CsDl> csDls = csDlDao.getAll();
 		return csDls;
 	}
 

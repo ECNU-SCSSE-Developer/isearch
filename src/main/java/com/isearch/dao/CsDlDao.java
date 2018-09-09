@@ -18,5 +18,5 @@ public interface CsDlDao {
     int updateByPrimaryKey(CsDl record);
     
     //返回cs_dl中所有元组
-    List<CsDl> listAll();
+    List<CsDl> getAll();
 }
