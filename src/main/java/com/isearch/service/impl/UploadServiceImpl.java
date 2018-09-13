@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 import org.apache.commons.net.ftp.FTP;
@@ -36,8 +35,7 @@ public class UploadServiceImpl implements UploadService {
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
-		}     ///加载属性列表
-        
+		}     //加载属性列表
         
 		boolean result = false;
 		FTPClient ftp = new FTPClient();

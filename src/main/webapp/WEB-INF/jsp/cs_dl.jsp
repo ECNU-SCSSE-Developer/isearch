@@ -17,10 +17,18 @@
 <!-- 自己的css一定要在bootstrap之后引入才能覆盖bootstrap中的样式 -->
 <link rel="stylesheet" type="text/css"
 	href="../resources/css/pageStyle.css">
+	
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/navStyle.css">
 
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/footerStyle.css">
 <title>CSDL</title>
 </head>
 <body>
+	<%@include file="../nav.html" %>
+	<div>
+	
 	<c:forEach items="${list}" var="list" varStatus="st">
 		<div class="items">
 			<div class="item_img">
@@ -53,11 +61,13 @@
 			</div>
 		</div>
 	</c:forEach>
-
+</div>
 	<div style="text-align: center">
 		<a href="?start=0">首 页</a> <a href="?start=${page.start-page.count}">上一页</a>
 		<a href="?start=${page.start+page.count}">下一页</a> <a
 			href="?start=${page.last}">末 页</a>
 	</div>
+	
+	<%@include file="../footer.html" %>
 </body>
 </html>
