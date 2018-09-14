@@ -19,10 +19,52 @@ nav {
 .navbar {
 	padding: 20px;
 	justify-content: space-between;
+	height: 85px;
+	s
 }
 
 .nav-link {
 	color: black;
 	font-size: 20px;
 	margin: 0 10px;
+}
+
+.sign a:hover {
+	text-decoration: none;
+	color: darkblue;
+}
+
+.sign_in {
+	display: inline-block;
+	color: #007bff;
+	margin-left: 20px;
+}
+
+.sign_in:hover {
+	color: darkblue;
+	cursor: pointer;
+}
+
+.sign_up {
+	color: #007bff;
+}
+
+.nav_right {
+	display: flex;
+	flex-direction: row;
+	line-height: 85px;
+}
+
+.modal-title {
+	margin-left: 40%;
+	text-align: center;
+}
+
+.modal-body button {
+	margin-top: 50px;
+	width: 100%;
+}
+
+.body_passwd {
+	margin-top: 20px;
 }

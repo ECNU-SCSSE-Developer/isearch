@@ -12,7 +12,7 @@ import com.isearch.service.CsRecService;
 @Service
 public class CsRecServiceImpl implements CsRecService{
 	@Autowired
-	CsRecDao csRecDao;
+	private CsRecDao csRecDao;
 
 	/*得到cs_dl表中所有元组*/
 	public List<CsRec> getAll() {

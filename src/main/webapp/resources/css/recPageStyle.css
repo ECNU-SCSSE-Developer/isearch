@@ -1,8 +1,17 @@
-body {
-	background-color: #353b48;
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	min-height: 100%;
 }
 
-a, a:link, a:visited, a:hover, a:active {
+body {
+	background-color: #353b48;
+	padding-top: 100px;
+}
+
+.content a, .content a:link, .content a:visited, .content a:hover,
+	.content a:active {
 	text-decoration: none;
 	color: inherit;
 }

@@ -17,34 +17,46 @@
 <!-- 自己的css一定要在bootstrap之后引入才能覆盖bootstrap中的样式 -->
 <link rel="stylesheet" type="text/css"
 	href="../resources/css/recPageStyle.css">
+
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/navStyle.css">
+
+<link rel="stylesheet" type="text/css"
+	href="../resources/css/footerStyle.css">
 <title>CSREC</title>
 </head>
 <body>
-	<c:forEach items="${list}" var="list" varStatus="st">
-		<div class="items">
-			<div class="item_img">
-				<img src="../resources/images/git.png">
+	<%@include file="../nav.html"%>
+
+	<div class="content">
+		<c:forEach items="${list}" var="list" varStatus="st">
+			<div class="items">
+				<div class="item_img">
+					<img src="../resources/images/git.png">
+				</div>
+				<div class="c1">
+					<p>
+						<strong>${list.name}</strong>
+					</p>
+					<p class="intro">${list.intro}</p>
+				</div>
+				<div class="c2">
+					<a href="${list.ow}" target="_blank">
+						<button class="btn2">
+							<strong>进入官网</strong>
+						</button>
+					</a>
+				</div>
 			</div>
-			<div class="c1">
-				<p>
-					<strong>${list.name}</strong>
-				</p>
-				<p class="intro">${list.intro}</p>
-			</div>
-			<div class="c2">
-				<a href="${list.ow}" target="_blank">
-					<button class="btn2">
-						<strong>进入官网</strong>
-					</button>
-				</a>
-			</div>
-		</div>
-	</c:forEach>
+		</c:forEach>
+	</div>
 
 	<div style="text-align: center">
 		<a href="?start=0">首 页</a> <a href="?start=${page.start-page.count}">上一页</a>
 		<a href="?start=${page.start+page.count}">下一页</a> <a
 			href="?start=${page.last}">末 页</a>
 	</div>
+
+	<%@include file="../footer.html"%>
 </body>
 </html>

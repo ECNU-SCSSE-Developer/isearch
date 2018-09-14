@@ -2,7 +2,6 @@ package com.isearch.dao;
 
 import java.util.List;
 
-import com.isearch.entity.CsDl;
 import com.isearch.entity.CsRec;
 
 public interface CsRecDao {

@@ -13,7 +13,7 @@ import com.isearch.service.CsDlService;
 public class CsDlServiceImpl implements CsDlService {
 
 	@Autowired
-	CsDlDao csDlDao;
+	private CsDlDao csDlDao;
 	
 	
 	/*得到cs_dl表中所以元组*/

@@ -18,7 +18,7 @@ public class UploadController {
 	private static Logger logger = Logger.getLogger(UploadController.class);
 
 	@Autowired
-	UploadService UploadService;
+	private UploadService UploadService;
 
 	@RequestMapping("/uploadImage")
 	public ModelAndView upload(HttpServletRequest request, UploadedImageFile file)

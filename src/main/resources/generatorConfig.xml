@@ -69,7 +69,7 @@ PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
 			'和' % ')的模式和表名都应该避免在搜寻列。 这是一些驱动要求如果模式或表包含一个SQL通配符(例如,如果一个表的名字是MY_TABLE,一些驱动要求的下划线字符进行转义)。 -->
 		<!--对应数据库表名 -->
 
-		<table tableName="%" enableCountByExample="false"
+		<table tableName="user" enableCountByExample="false"
 			enableUpdateByExample="false" enableDeleteByExample="false"
 			enableSelectByExample="false" selectByExampleQueryId="false" />
 	</context>
